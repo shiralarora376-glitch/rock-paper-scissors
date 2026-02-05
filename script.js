@@ -1,30 +1,48 @@
-let userScore = 0;
-let computerScore = 0;
+let board = ["","","","","","","","",""];
+let currentPlayer = "X";
+let gameOver = false;
 
-function playGame(userChoice) {
-    const choices = ["rock", "paper", "scissors"];
-    const computerChoice = choices[Math.floor(Math.random() * 3)];
+const wins = [
+  [0,1,2],[3,4,5],[6,7,8],
+  [0,3,6],[1,4,7],[2,5,8],
+  [0,4,8],[2,4,6]
+];
 
-    let result = "";
+function play(cell, index) {
+  if (board[index] !== "" || gameOver) return;
 
-    if (userChoice === computerChoice) {
-        result = "It's a Draw 🤝";
-    } 
-    else if (
-        (userChoice === "rock" && computerChoice === "scissors") ||
-        (userChoice === "paper" && computerChoice === "rock") ||
-        (userChoice === "scissors" && computerChoice === "paper")
-    ) {
-        userScore++;
-        result = "You Win 🎉";
-    } 
-    else {
-        computerScore++;
-        result = "Computer Wins 😢";
-    }
+  board[index] = currentPlayer;
+  cell.innerText = currentPlayer;
 
-    document.getElementById("userScore").innerText = userScore;
-    document.getElementById("computerScore").innerText = computerScore;
-    document.getElementById("result").innerText =
-        `You chose ${userChoice}, Computer chose ${computerChoice}. ${result}`;
+  if (checkWin()) {
+    document.getElementById("status").innerText =
+      `Player ${currentPlayer} Wins 🎉`;
+    gameOver = true;
+    return;
+  }
+
+  if (!board.includes("")) {
+    document.getElementById("status").innerText =
+      "It's a Draw 🤝";
+    gameOver = true;
+    return;
+  }
+
+  currentPlayer = currentPlayer === "X" ? "O" : "X";
+  document.getElementById("status").innerText =
+    `Player ${currentPlayer} Turn`;
+}
+
+function checkWin() {
+  return wins.some(combo =>
+    combo.every(i => board[i] === currentPlayer)
+  );
+}
+
+function resetGame() {
+  board = ["","","","","","","","",""];
+  currentPlayer = "X";
+  gameOver = false;
+  document.getElementById("status").innerText = "Player X Turn";
+  document.querySelectorAll(".cell").forEach(c => c.innerText = "");
 }
