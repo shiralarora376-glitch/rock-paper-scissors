@@ -1,54 +1,18 @@
-* {
-  box-sizing: border-box;
-}
-
-/* PAGE CENTER FIX */
-.page {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  font-family: "Segoe UI", Arial, sans-serif;
-}
-
-/* CARD */
-.game-container {
-  width: 360px;
-  background: #ffffff;
-  padding: 32px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-}
-
-/* TITLE */
-.game-container h1 {
-  margin: 0 0 18px;
-  font-size: 26px;
-  color: #222;
-}
-
-/* RESULT */
-#result {
-  margin-bottom: 25px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #444;
-}
-
-/* BUTTON ROW */
+/* BUTTON ROW – FORCE HORIZONTAL */
 .buttons {
   display: flex;
-  gap: 14px;
+  flex-direction: row;   /* 👈 MOST IMPORTANT */
+  justify-content: center;
+  gap: 16px;
 }
 
-/* BUTTONS */
+/* BUTTONS – NORMAL SIZE */
 button {
-  flex: 1;
-  padding: 14px 0;
+  width: 110px;          /* 👈 FIXED WIDTH */
+  height: 48px;          /* 👈 FIXED HEIGHT */
+  padding: 0;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 600;
   border: none;
   border-radius: 14px;
   cursor: pointer;
@@ -64,11 +28,4 @@ button:hover {
 
 button:active {
   transform: scale(0.95);
-}
-
-/* MOBILE */
-@media (max-width: 420px) {
-  .game-container {
-    width: 90%;
-  }
 }
