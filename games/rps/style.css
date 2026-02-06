@@ -1,18 +1,54 @@
-/* BUTTON ROW – FORCE HORIZONTAL */
-background: linear-gradient(180deg, #eef4ff, #dbeafe);
+* {
+  box-sizing: border-box;
+}
 
+/* PAGE BACKGROUND – LIGHT BLUE */
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #eef4ff, #dbeafe);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* GAME CARD */
+.game-container {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 360px;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* TITLE */
+.game-container h1 {
+  margin: 0 0 20px;
+  font-size: 26px;
+  color: #222;
+}
+
+/* RESULT */
+#result {
+  margin-bottom: 25px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* BUTTON ROW – FORCE HORIZONTAL */
 .buttons {
   display: flex;
-  flex-direction: row;   /* 👈 MOST IMPORTANT */
+  flex-direction: row;
   justify-content: center;
   gap: 30px;
 }
 
-/* BUTTONS – NORMAL SIZE */
+/* BUTTONS */
 button {
-  width: 111px;          /* 👈 FIXED WIDTH */
-  height: 49px;          /* 👈 FIXED HEIGHT */
-  padding: 0;
+  width: 111px;
+  height: 49px;
   font-size: 16px;
   font-weight: 600;
   border: none;
@@ -30,4 +66,11 @@ button:hover {
 
 button:active {
   transform: scale(0.95);
+}
+
+/* MOBILE */
+@media (max-width: 420px) {
+  .game-container {
+    width: 90%;
+  }
 }
