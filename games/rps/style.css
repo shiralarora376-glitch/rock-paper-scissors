@@ -1,4 +1,6 @@
 /* BUTTON ROW – FORCE HORIZONTAL */
+background: linear-gradient(180deg, #eef4ff, #dbeafe);
+
 .buttons {
   display: flex;
   flex-direction: row;   /* 👈 MOST IMPORTANT */
