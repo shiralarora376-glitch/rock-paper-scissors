@@ -1,88 +1,66 @@
-/* ===== RESET & BACKGROUND ===== */
 * {
   box-sizing: border-box;
 }
 
+/* Background */
 body {
   margin: 0;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at top, #2b2f77, #141852);
-  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #1d2671, #141852);
+  font-family: Arial, sans-serif;
 }
 
-/* ===== GAME CONTAINER ===== */
+/* Center Card */
 .game-container {
-  background: linear-gradient(180deg, #ffffff, #f5f6ff);
-  padding: 32px 28px;
-  border-radius: 22px;
+  width: 340px;
+  background: #ffffff;
+  padding: 30px 28px;
+  border-radius: 20px;
   text-align: center;
-  width: 330px;
-  box-shadow:
-    0 25px 45px rgba(0,0,0,0.35),
-    inset 0 1px 0 rgba(255,255,255,0.6);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.35);
 }
 
-/* ===== HEADING ===== */
+/* Heading */
 h1 {
-  margin: 0 0 10px;
-  font-size: 24px;
-  letter-spacing: 0.5px;
+  margin: 0 0 15px;
 }
 
-/* ===== RESULT TEXT ===== */
+/* Result text */
 #result {
   font-size: 17px;
-  margin: 15px 0 28px;
-  font-weight: 600;
+  margin: 15px 0 25px;
+  font-weight: bold;
   color: #333;
 }
 
-/* ===== BUTTON ROW ===== */
+/* Button row */
 .buttons {
   display: flex;
   gap: 10px;
 }
 
-/* ===== GAME BUTTONS ===== */
+/* Buttons */
 button {
   flex: 1;
   padding: 12px 0;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: bold;
   border: none;
   border-radius: 14px;
   cursor: pointer;
-  background: linear-gradient(135deg, #667eea, #5a67d8);
+  background: #6f7eea;
   color: white;
-  box-shadow:
-    0 6px 14px rgba(102,126,234,0.5);
-  transition:
-    transform 0.15s ease,
-    box-shadow 0.15s ease,
-    background 0.15s ease;
+  transition: 0.2s;
 }
 
-/* ===== HOVER ===== */
 button:hover {
-  background: linear-gradient(135deg, #764ba2, #6b46c1);
-  transform: translateY(-3px);
-  box-shadow:
-    0 10px 20px rgba(118,75,162,0.55);
+  background: #5a5fd8;
+  transform: translateY(-2px);
 }
 
-/* ===== CLICK ===== */
 button:active {
-  transform: translateY(0) scale(0.96);
-  box-shadow:
-    0 4px 10px rgba(0,0,0,0.3);
-}
-
-/* ===== MOBILE SAFETY ===== */
-@media (max-width: 400px) {
-  .game-container {
-    width: 90%;
-  }
+  transform: scale(0.95);
 }
