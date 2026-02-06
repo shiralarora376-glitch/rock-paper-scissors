@@ -8,7 +8,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
- background: #cfe2ff;  /* 👈 clean light blue */
+ background: #dbeafe;
+  /* 👈 clean light blue */
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
